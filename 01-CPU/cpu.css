@@ -1,4 +1,7 @@
 ﻿/*CSS - Cascade Style Sheet (Каскадные таблицы стилей)*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
 	font-size: 20px;
 	/*font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
