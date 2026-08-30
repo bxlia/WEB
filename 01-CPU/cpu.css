@@ -37,3 +37,15 @@ cite
 {
 	text-align: justify;
 }
+
+dt
+{
+	float: left;/*Обтекание текста*/
+	font-weight: bold;
+}
+
+dd
+{
+	margin-left: 128px;
+	border: solid 0;
+}
