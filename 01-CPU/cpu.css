@@ -49,3 +49,52 @@ dd
 	margin-left: 128px;
 	border: solid 0;
 }
+/*--------------------------------------------------------------------*/
+table
+{
+	border-collapse: collapse;
+	width: 80%;
+	margin: 0 auto;
+}
+table, thead
+{
+	border: solid 2px;
+}
+th, td
+{
+	border: solid 1px;
+}
+thead th
+{
+	background-color: #a4a4a4;
+	color: darkgreen;
+	padding: 16px;
+}
+
+td
+{
+	text-align: center;
+}
+tbody th
+{
+	text-align: left;
+	background-color: #a4a4a4;
+}
+table:hover
+{
+	box-shadow: 0 0 16px 16px #a4a4a4;
+}
+tr:hover
+{
+	box-shadow: inset 0 0 12px 0 darkgrey;
+}
+a:hover
+{
+	font-weight: 800;
+	color: black;
+}
+a:active
+{
+	background-color: black;
+	color: white;
+}
