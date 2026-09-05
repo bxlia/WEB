@@ -1,0 +1,99 @@
+﻿body 
+{
+	margin: 0;
+	padding: 20px;
+}
+
+table 
+{
+	width: 90%;
+	margin: 0 auto;
+}
+
+caption
+{
+	font-size: 30px;
+}
+
+
+.empty-cell 
+{
+	background-color: #ffffff;
+	border: none;
+}
+
+.legend {
+	margin-top: 20px;
+	display: flex;
+	gap: 15px; 
+	justify-content: center; 
+}
+
+.legend-item {
+	display: flex;
+	align-items: center; 
+}
+
+.square {
+	width: 16px;
+	height: 16px;
+	margin-right: 8px;
+	border: 1px solid #cbd5e1;
+	border-radius: 3px;
+}
+
+.legend-item span {
+	font-size: 13px;
+	font-weight: 500;
+}
+
+/*--------------------------------------------------------*/
+.alkali-metals 
+{
+	background-color: #fca5a5;
+}
+
+.alkaline-earth 
+{
+	background-color: #fed7aa;
+}
+
+.transition-metals 
+{
+	background-color: #fef08a;
+}
+
+.post-transition 
+{
+	background-color: #bbf7d0;
+}
+
+.metalloids 
+{
+	background-color: #99f6e4;
+}
+
+.reactive-nonmetals 
+{
+	background-color: #bfdbfe;
+}
+
+.noble-gases 
+{
+	background-color: #e9d5ff;
+}
+
+.lanthanides 
+{
+	background-color: #fbcfe8;
+}
+
+.actinides 
+{
+	background-color: #f5d0fe;
+}
+
+.unknown-properties 
+{
+	background-color: #e2e8f0;
+}
