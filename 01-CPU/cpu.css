@@ -7,6 +7,10 @@ body {
 	font-size: 20px;
 	/*font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
 	font-family: Roboto Condensed;
+	/*background: #c3ff6c*/
+	background-image: linear-gradient(165deg,#3f8a5f, #635252);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 p {
