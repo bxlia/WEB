@@ -1,0 +1,66 @@
+﻿body
+{
+	background-image:url("img/bliss.jpg");
+	background-size: cover;
+}
+.main-window
+{
+	border: solid 1px;
+	width: 400px;
+	height: 300px;
+}
+.title-bar {
+	height: 36px;
+	background-color: #730a80;
+	color: white;
+
+	font-family: Tahoma;
+
+	display: flex;
+	justify-content: space-between; /*Выравнивание по горизонтали*/
+	align-items: center; /*Выравнивание по вертикали*/
+}
+.icon-and-title {
+	display: flex;
+	align-items: center;
+}
+.title-bar-window-control-buttons
+{
+	padding: 0 3px;
+	width: 120px;
+	padding: 1px;
+}
+.title-bar-window-control-buttons/*, .control-buttons */
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+/*
+	border-bottom: solid 1px;*/
+}
+.control-button
+{
+	width: 32px;
+	height: 32px;
+	font-size: 24px;
+	margin: 0 2px;
+}
+
+.control-button-signature
+{
+	margin-left: -5px;
+	margin-top: -5px;
+}
+/*.close-button-signature
+{
+	margin: -3px 0 0 -1px;
+}*/
+.iconsm {
+	width: 32px;
+	height: 32px;
+}
+.client-rect
+{
+	background-color: #85bfff;
+	height: 262px;
+}
