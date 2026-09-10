@@ -1,0 +1,75 @@
+﻿/*input
+{
+	width: 200px;
+}
+input[type=date]
+{
+	width: 92px;
+}
+textarea
+{
+	width: 202px;
+}*/
+h1
+{
+	text-align: center;
+}
+form
+{
+	width: 50%;
+	border: solid 1px;
+	border-radius: 16px;
+	margin: 0 auto;
+	padding: 16px;
+	text-align: center;
+}
+form > div
+{
+	width: 100%;
+}
+form > div, form > fieldset, form > select
+{
+	margin: 5px auto;
+}
+form > fieldset
+{
+	text-align: left;
+}
+form input, form textarea
+{
+	width: 50%;
+	margin: 5px;
+}
+form select
+{
+	width: 51%;
+	margin: 5px;
+
+}
+form select[multiple]
+{
+	height: 140px;
+}
+input[type=date]
+{
+	width: 30%;
+}
+input[type=checkbox], input[type=radio]
+{
+	width: 13px;
+}
+fieldset
+{
+	width: 46%;
+	margin: 5px;
+}
+.EULA
+{
+	overflow: scroll;
+	width: 48%;
+	height: 300px;
+	border: solid 1px;
+	font-size: 12px;
+	text-align: left;
+	padding: 1%;
+}

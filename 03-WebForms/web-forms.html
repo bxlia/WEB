@@ -1,11 +1,68 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="web-forms.css"
     <title></title>
 </head>
 <body>
+    <h1>WebForms</h1>
+    <form action="/" method="post">
+        <input                type="text"     placeholder="Имя пользователя" size="27" maxlength="15"/>
+        <input                type="password" placeholder="Введите пароль"   size="27" maxlength="15"/>
+		<div><label for="birth-date">Дата рождения:</label><input type="date" placeholder="Дата рождения" /></div>
+        <input                type="email"    placeholder="Email"            size="27" min="2025-01-01" max="2033-01-01"/>
+        <input                type="file"     placeholder="Загрузите Ваше фото"/>
+		<div><textarea placeholder="Пару слов о себе" rows="5" cols="28"></textarea></div>
 
+			<fieldset>
+				<legend>Какие языки Вы знаете:</legend>
+				<input type="checkbox" id="Русский" /><label for="Русский">Русский  </label><br />
+				<input type="checkbox" id="English" /><label for="English">English  </label><br />
+				<input type="checkbox" id="Deutsche" /><label for="Deutsche">Deutsche</label><br />
+				<input type="checkbox" id="Italiano" /><label for="Italiano">Italiano</label><br />
+				<input type="checkbox" id="Espaniol" /><label for="Espaniol">Espaniol</label><br />
+			</fieldset>
+
+
+        <fieldset>
+            <legend>Выберите форму обучения:</legend>
+			<input type="radio" name="learning-form" id="stacionar" /><label>Стационар</label></div>
+		    <input type="radio" name="learning-form" id="semistacionar" /><label>Полустационар</label></div>
+        </fieldset>
+
+		<div>
+			<select>
+				<option disabled>--- Выберите направление обучения ---</option>
+				<option>РПО</option>
+				<option>Сетевые технологии и системное администрирование</option>
+				<option>Компьютерная графика и дизайн</option>
+			</select>
+		</div>
+
+		<div>
+			<select size="7" multiple>
+				<option selected disabled>Выберите дни недели</option>
+				<option>Понедельник</option>
+				<option>Вторник</option>
+				<option>Среда</option>
+				<option>Четверг</option>
+				<option>Пятница</option>
+				<option>Суббота</option>
+				<option>Воскресенье</option>
+			</select>
+		</div>
+
+        <input type="color" />
+        <input type="week" />
+        <input type="range" />
+		<div class="EULA">
+
+		</div>
+
+        <input type="reset" />
+        <input type="submit" />
+    </form>
 </body>
 </html>
