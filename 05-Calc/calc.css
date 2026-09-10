@@ -5,7 +5,7 @@
 }
 .main-window
 {
-	border: solid 1px;
+	/*border: solid 1px;*/
 	width: 400px;
 	height: 300px;
 }
@@ -13,12 +13,16 @@
 	height: 36px;
 	background-color: #730a80;
 	color: white;
-
 	font-family: Tahoma;
-
 	display: flex;
 	justify-content: space-between; /*Выравнивание по горизонтали*/
 	align-items: center; /*Выравнивание по вертикали*/
+
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	/*background-image: linear-gradient(to bottom, #7089ff, #002fe8, #080798);*/
+	background-image: linear-gradient(to bottom, rgb(94, 137, 255), rgb(0, 95, 246), rgb(38, 0, 151));
+	box-shadow: inset -1px 0px 8px 0px 0px darkblue;
 }
 .icon-and-title {
 	display: flex;
@@ -51,10 +55,10 @@
 	margin-left: -5px;
 	margin-top: -5px;
 }
-/*.close-button-signature
+.close-button-signature
 {
 	margin: -3px 0 0 -1px;
-}*/
+}
 .iconsm {
 	width: 32px;
 	height: 32px;
