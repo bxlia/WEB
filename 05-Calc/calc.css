@@ -49,16 +49,53 @@
 	height: 28px;
 	font-size: 24px;
 	margin: 0 2px;
-}
 
+	border: solid 1px;
+	border-radius: 10px;
+
+	background-color: #2d65ff;
+	color: white;
+
+	box-shadow: inset 2px 1px 7px 0px #5e91e2,
+				inset -2px -1px 7px 0px #171b6f;
+}
+.control-button:hover
+{
+	background-image: linear-gradient(to bottom right, rgb(189, 189, 249), rgb(39, 104, 249), rgb(149, 149, 249));
+}
+.control-button[disabled], .control-button[disabled]:hover
+{
+	color: #7d7c7c;
+	background-image: none;
+	background-color: rgb(39, 104, 249);
+	box-shadow: inset 3px 1px 7px 0 #636886;
+}
+	.control-button:active {
+		background-image: none;
+		background-color: rgb(50, 50, 200);
+		box-shadow: inset -3px -1px 7px 0 #636886, inset 4px 1px 5px 0px #000088;
+	}
 .control-button-signature
 {
-	margin-left: -6px;
-	margin-top: -5px;
+	margin-left: -5px;
+	margin-top: -7px;
 }
 .close-button-signature
 {
-	margin: -3px 0 0 -4px;
+	margin: -5px 0 0 -2px;
+}
+.close-button 
+{
+	background-color: #e13535;
+	box-shadow: inset 2px 1px 7px 0 #ee6f6f, inset -2px -1px 7px 0 #510707;
+}
+.close-button:hover
+{
+	background-image: linear-gradient(to bottom right, rgb(220, 177, 157), rgb(255, 77, 57), rgb(220, 177, 157));
+}
+.close-button:active
+{
+
 }
 .iconsm {
 	width: 32px;
