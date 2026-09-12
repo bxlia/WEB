@@ -17,6 +17,7 @@
 	display: flex;
 	justify-content: space-between; /*Выравнивание по горизонтали*/
 	align-items: center; /*Выравнивание по вертикали*/
+	padding: 0 5px;
 
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
@@ -44,20 +45,20 @@
 }
 .control-button
 {
-	width: 32px;
-	height: 32px;
+	width: 28px;
+	height: 28px;
 	font-size: 24px;
 	margin: 0 2px;
 }
 
 .control-button-signature
 {
-	margin-left: -5px;
+	margin-left: -6px;
 	margin-top: -5px;
 }
 .close-button-signature
 {
-	margin: -3px 0 0 -1px;
+	margin: -3px 0 0 -4px;
 }
 .iconsm {
 	width: 32px;
