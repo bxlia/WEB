@@ -11,7 +11,7 @@
 }
 .title-bar {
 	height: 36px;
-	background-color: #730a80;
+	/*background-color: #4629ff;*/
 	color: white;
 	font-family: Tahoma;
 	display: flex;
@@ -23,7 +23,7 @@
 	border-top-right-radius: 8px;
 	/*background-image: linear-gradient(to bottom, #7089ff, #002fe8, #080798);*/
 	background-image: linear-gradient(to bottom, rgb(94, 137, 255), rgb(0, 95, 246), rgb(38, 0, 151));
-	box-shadow: inset -1px 0px 8px 0px 0px darkblue;
+	box-shadow: inset -1px 0px 8px 0px darkblue;
 }
 .icon-and-title {
 	display: flex;
@@ -59,10 +59,9 @@
 	box-shadow: inset 2px 1px 7px 0px #5e91e2,
 				inset -2px -1px 7px 0px #171b6f;
 }
-.control-button:hover
-{
-	background-image: linear-gradient(to bottom right, rgb(189, 189, 249), rgb(39, 104, 249), rgb(149, 149, 249));
-}
+	.control-button:hover {
+		background-image: linear-gradient(to bottom right, rgb(189, 189, 249), #002ba1, #6463e9);
+	}
 .control-button[disabled], .control-button[disabled]:hover
 {
 	color: #7d7c7c;
@@ -103,8 +102,20 @@
 	width: 32px;
 	height: 32px;
 }
+/*------------------------------------- Client area -------------------------------------*/
+.client-frame
+{
+	height: 261px;
+	background-color: #002ba1;
+	display: flex;
+	justify-content: center;
+
+	box-shadow: inset 0 4px 4px 0 #6463e9;
+}
 .client-rect
 {
-	background-color: #85bfff;
-	height: 262px;
+	background-color: #4166f7;
+	width: 390px;
+	height: 256px;
+	box-shadow: 0 4px 4px 0 #090a4f;
 }
