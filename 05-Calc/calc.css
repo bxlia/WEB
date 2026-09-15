@@ -110,12 +110,30 @@
 	display: flex;
 	justify-content: center;
 
-	box-shadow: inset 0 4px 4px 0 #6463e9;
+	box-shadow: inset 0 0px 1px 0 #6463e9;
 }
 .client-rect
 {
 	background-color: #4166f7;
 	width: 390px;
 	height: 256px;
-	box-shadow: 0 4px 4px 0 #090a4f;
+	box-shadow: 0 2px 4px 0 #090a4f;
+}
+.menu-bar {
+	border-bottom: solid 2px darkblue;
+	background-color: #1c29b9;
+}
+	.menu-bar > button {
+		border: none;
+		background-color: #1c29b9;
+	}
+.menu-bar > button:hover
+{
+	background-color: #d7d9c4; 
+	box-shadow: 1px 1px 0 0 gray;
+}
+.menu-bar > button:active
+{
+	background-color: darkgray;
+	box-shadow: -1px -1px 0 0 gray;
 }
