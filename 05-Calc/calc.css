@@ -121,7 +121,7 @@
 }
 .menu-bar {
 	border-bottom: solid 2px darkblue;
-	background-color: #1c29b9;
+	background-color: #2128b5;
 }
 	.menu-bar > button {
 		border: none;
@@ -136,4 +136,26 @@
 {
 	background-color: darkgray;
 	box-shadow: -1px -1px 0 0 gray;
+}
+/*---------------------------------------- Display ----------------------------------------*/
+.display-container
+{
+	padding: 6px;
+}
+	.display-container > input {
+		width: 98%;
+	}
+/*---------------------------------------- Buttons ----------------------------------------*/
+.buttons-container
+{
+	padding: 6px;
+	display: grid;
+	grid-template-rows: repeat(5, auto);
+	grid-template-columns: repeat(6, auto);
+}
+.clear-buttons
+{
+	grid-row: 1;
+	grid-column-start: 2;
+	grid-column-end: 7;
 }
