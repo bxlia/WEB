@@ -95,7 +95,9 @@
 }
 .close-button:active
 {
-
+	background-image: none;
+	background-color: rgb(220, 77, 57);
+	box-shadow: /*inset -2px -1px 8px 0 #FF8888,*/ inset 2px 1px 8px 0 #770000;
 }
 .iconsm {
 	width: 32px;
