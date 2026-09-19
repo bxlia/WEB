@@ -1,0 +1,24 @@
+﻿body, input
+{
+	font-size: 20px;
+}
+.factorial
+{
+	display: flex;
+	justify-content:flex-start;
+}
+#factorial-result
+{
+	margin-left: 8px;
+}
+.task
+{
+	margin: 32px;
+	padding: 16px;
+	border-radius: 12px;
+	box-shadow: 0 0 10px 0 gray;
+}
+.task > h2
+{
+	margin: 0;
+}
