@@ -6,6 +6,37 @@
 {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+	border-bottom: solid 1px gray;
+}
+.header > h3, .header > h5
+{
+	margin: 2px;
+}
+#switch-background
+{
+	width: 26px;
+	height: 26px;
+	background-size: 26px 26px;
+}
+.dark
+{
+	background-color: #323232;
+	color: white;
+}
+.dark #switch-background
+{
+	background-image: url('sun.png');
+	filter: brightness(0) invert(1);
+}
+.light {
+	background-color: wheat;
+	color: black;
+}
+.light #switch-background
+
+{
+	background-image: url('moon.png');
 }
 .factorial
 {
