@@ -29,3 +29,7 @@ function setForegroundColor(e) {
 function setColor(e) {
 	document.body.style[e.target.id === 'foreground-color' ? 'color' : 'backgroundColor'] = e.target.value;
 }
+document.addEventListener("mousemove", trackMouse);
+function trackMouse(e) {
+	document.getElementById("mouse-coords").innerHTML = `Mouse: X = ${e.clientX}, Y = ${e.clientY}`;
+}
