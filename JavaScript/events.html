@@ -7,21 +7,47 @@
     <title>Events</title>
 </head>
 <body>
-    <h1>Events</h1>
-	<div id="factorial-container" class="task">
-		<h2>Factorial</h2>
-		<input type="number" id="factorial-source"/>
-		<!--<button onclick="factorial()">Calculate</button>-->
-		<input type="button" value="Calculate" onclick="factorial()" />
-		<div id="factorial-result"></div>
+	<div class="header">
+		<h1>Events</h1>
+	</div>
+	<details>
+		<summory>Простейшие задачи</summory>
+		<div id="factorial-container" class="task">
+			<h2>Factorial</h2>
+			<input type="number" id="factorial-source" />
+			<!--<button onclick="factorial()">Calculate</button>-->
+			<input type="button" value="Calculate" onclick="factorial()" />
+			<div id="factorial-result"></div>
+		</div>
+
+		<div id="power-container" class="task">
+			<h2>Power</h2>
+			<input type="number" placeholder="Основание степени" id="base" onchange="power()" />
+			<input type="number" placeholder="Показатель степени" id="exponent" onchange="power()" />
+			<div id="power"></div>
+		</div>
+	</details>
+
+	<div class="images-and-colors">
+		<div class="photo-container">
+			<div class="image-container">
+				<img src="" alt="Фото студента" id="image" />
+			</div>
+			<input type="file" id="image-file" onchange="setImage()" />
+		</div>
+
+		<div class="colors">
+			<div>
+				<label for="background-color">Цвет фона:</label>
+				<input type="color" id="background-color" oninput="setColor(event)"/>
+			</div>
+			<div>
+				<label for="foreground-color">Цвет текста:</label>
+				<input type="color" id="foreground-color" oninput="setColor(event)"/>
+			</div>
+		</div>
 	</div>
 
-	<div id="power-container" class="task">
-		<h2>Power</h2>
-		<input type="number" placeholder="Основание степени" id="base" onchange="power()"/>
-		<input type="number" placeholder="Показатель степени" id="exponent" onchange="power()"/>
-		<div id="power"></div>
-	</div>
 	<script src="events.js"></script>
 </body>
 </html>
