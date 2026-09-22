@@ -11,13 +11,25 @@
 }
 .header > h3, .header > h5
 {
-	margin: 2px;
+	margin: 10px;
 }
+	.header > div {
+		display: flex;
+		justify-content: space-between;
+		
+	}
+	.header input {
+		width: 48px;
+		height: 26px;
+	}
 #switch-background
 {
-	width: 26px;
-	height: 26px;
-	background-size: 26px 26px;
+	--bg-size: 26px;
+	width: var(--bg-size);
+	height: var(--bg-size);
+	background-size: var(--bg-size) var(--bg-size);
+	margin: 12px;
+	transition: 3s;
 }
 .dark
 {
@@ -30,13 +42,17 @@
 	filter: brightness(0) invert(1);
 }
 .light {
-	background-color: wheat;
+	background-color: white;
 	color: black;
 }
 .light #switch-background
 
 {
 	background-image: url('moon.png');
+}
+body
+{
+	transition: color 3s, background-color 3s;
 }
 .factorial
 {
