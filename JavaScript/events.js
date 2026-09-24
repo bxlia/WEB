@@ -13,6 +13,39 @@ function power() {
 	let exp = document.getElementById('exponent').value;
 	document.getElementById('power').innerHTML = `${base}<sup>${exp}</sup>=${base**exp}`;
 }
+function fibonacci() {
+	let n = Number(document.getElementById("fibonacci-source").value);
+	let row = [];
+	let a = 0n;
+	let b = 1n;
+	for (let i = -1; i < n; i++) {
+		row.push(a);
+		let next = a + b;
+		a = b;
+		b = next;
+	}
+	/*document.getElementById("fibonacci-result").innerHTML = `F(${n}) = ${b}`;*/
+	document.getElementById("fibonacci-result").innerHTML = row.join(`, `);
+}
+function drawChessboard() {
+	let n = Number(document.getElementById("chessboard-source").value);
+	let table = '<table class="chess-table">';
+	for (let row = 0; row < n; row++) {
+		table += '<tr>';
+		for (let col = 0; col < n; col++) {
+			if ((row + col) % 2 === 0) {
+				table += '<td class="white-cell"></td>';
+			} else {
+				table += '<td class="black-cell"></td>';
+			}
+		}
+		table += '</tr>';
+	}
+
+	table += '</table>';
+	document.getElementById("chessboard-result").innerHTML = table;
+
+}
 /*=========================================================================================*/
 function setImage() {
 	let image_file_control = document.getElementById("image-file");

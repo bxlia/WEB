@@ -34,6 +34,20 @@
 			<input type="number" placeholder="Показатель степени" id="exponent" onchange="power()" />
 			<div id="power"></div>
 		</div>
+
+		<div id="fibonacci-container" class="task">
+			<h2>Fibonacci</h2>
+			<input type="number" placeholder="Число фибоначчи" id="fibonacci-source" onchange="fibonacci()" />
+			<div id="fibonacci-result"></div>
+		</div>
+
+		<div id="chessboard-container" class="task">
+			<h2>Chessboard</h2>
+			<input type="number" placeholder="Длина клеток" id="chessboard-source">
+			<input type="button" value="Create" onclick="drawChessboard()" />
+		</div>
+		<div id="chessboard-result"></div>
+
 	</details>
 
 	<div class="images-and-colors">

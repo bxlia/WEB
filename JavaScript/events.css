@@ -74,6 +74,28 @@ body
 {
 	margin: 0;
 }
+.chess-table
+{
+	border-collapse: collapse;
+	margin: 20px 0;
+	border: 2px solid;
+}
+
+	.chess-table td 
+	{
+		width: 25px;
+		height: 25px;
+	}
+.white-cell 
+{
+	background-color: #eeeed2;
+}
+
+.black-cell 
+{
+	background-color: #769656;
+}
+
 /*==================================================================*/
 .images-and-colors, .colors
 {
