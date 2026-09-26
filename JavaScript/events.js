@@ -150,10 +150,84 @@ function tickCountdown() {
 	let time_of_day = duration % SECONDS_PER_DAY;
 	let date = duration - time_of_day;
 
+	let hours_block = document.getElementById("hours-unit").parentElement;
+	let years = Math.trunc(date / SECONDS_PER_YEAR);
+	if (years > 0) {
+		date = date % SECONDS_PER_YEAR;
+		let years_unit = document.getElementById("years-unit");
+		if (years_unit == null) {
+			let years_block = createTimeBlock("years", years);
+			hourss_block.before(years_block);
+		}
+		else years_unit.innerHTML = addLeadingZero(years);
+	}
+	else removeTimeBlock("hours");
+
+	let months = Math.trunc(date / SECONS_PER_MONTH);
+	if (months > 0) {
+		date = date % SECONS_PER_MONTH;
+		let months_unit = document.getElementById("months-unit");
+		if (months_unit == null) {
+			let months_block = createTimeBlock("months", months);
+			hours_block.before(months_block);
+		}
+		else months_unit.innerHTML = addLeadingZero(months);
+	}
+	else removeTimeBlock("months");
+
+	let weeks = Math.trunc(date / SECONS_PER_WEEKS);
+	if (weeks > 0) {
+		date = date % SECONS_PER_WEEKS;
+		let weeks_unit = document.getElementById("weeks-unit");
+		if (weeks_unit == null) {
+			let weeks_block = createTimeBlock("weeks", weeks);
+			hours_block.before(weeks_block);
+		}
+		else weeks_unit.innerHTML = addLeadingZero(weeks);
+	}
+	else removeTimeBlock("weeks");
+
+	let days = Math.trunc(date / SECONS_PER_DAYS);
+	if (days > 0) {
+		date = date % SECONS_PER_DAYS;
+		let days_unit = document.getElementById("days-unit");
+		if (days_unit == null) {
+			let days_block = createTimeBlock("days", days);
+			hours_block.before(days_block);
+		}
+		else days_unit.innerHTML = addLeadingZero(days);
+	}
+	else removeTimeBlock("days");
+
 	document.getElementById("hours-unit").innerHTML = addLeadingZero(Math.trunc(time_of_day / SECONDS_PER_HOUR));
 	time_of_day = time_of_day % SECONDS_PER_HOUR;
 	document.getElementById("minutes-unit").innerHTML = addLeadingZero(Math.trunc(time_of_day / SECONDS_PER_MINUTE));
 	document.getElementById("seconds-unit").innerHTML = addLeadingZero(time_of_day / SECONDS_PER_MINUTE);
 	
 	setTimeout(tickCountdown, 100);
+}
+function createTimeBlock(name, value) {
+	let time_block = document.createElement("div");
+	time_block.className = "time-block";
+	let unit = document.createElement("div");
+	unit.id = `${name}-unit`;
+	unit.className = "time-unit";
+	unit.innerHTML = addLeadingZero(value);
+
+	let marker = document.createElement("div");
+	marker.id = `${name}-marker`;
+	marker.className = "time-marker";
+	marker.innerHTML = name;
+
+	time_block.prepend(unit);
+	time_block.append(marker);
+	return time_block;
+}
+function removeTimeBlock(name) {
+	let unit = document.getElementById(`${name}-unit`);
+	if (unit != null) {
+		let block = unit.parentElement;
+		let display = block.parentElement;
+		display.removeChild(block);
+	}
 }
