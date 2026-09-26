@@ -1,24 +1,29 @@
 // JavaScript source code
-function factorial() {
+function factorial()
+{
 	let n = Number(document.getElementById("factorial-source").value);
 	//alert(`${typeof (n)} ${n}`)
 	let f = BigInt(1);
-	for (let i = 1n; i <= n; i++) {
+	for (let i = 1n; i <= n; i++)
+	{
 		f *= i;
 	}
 	document.getElementById("factorial-result").innerHTML = `${n}! = ${f}`;
 }
-function power() {
+function power()
+{
 	let base = document.getElementById('base').value;
 	let exp = document.getElementById('exponent').value;
-	document.getElementById('power').innerHTML = `${base}<sup>${exp}</sup>=${base**exp}`;
+	document.getElementById('power').innerHTML = `${base}<sup>${exp}</sup>=${base ** exp}`;
 }
-function fibonacci() {
+function fibonacci()
+{
 	let n = Number(document.getElementById("fibonacci-source").value);
 	let row = [];
 	let a = 0n;
 	let b = 1n;
-	for (let i = -1; i < n; i++) {
+	for (let i = -1; i < n; i++)
+	{
 		row.push(a);
 		let next = a + b;
 		a = b;
@@ -27,15 +32,20 @@ function fibonacci() {
 	/*document.getElementById("fibonacci-result").innerHTML = `F(${n}) = ${b}`;*/
 	document.getElementById("fibonacci-result").innerHTML = row.join(`, `);
 }
-function drawChessboard() {
+function drawChessboard()
+{
 	let n = Number(document.getElementById("chessboard-source").value);
 	let table = '<table class="chess-table">';
-	for (let row = 0; row < n; row++) {
+	for (let row = 0; row < n; row++)
+	{
 		table += '<tr>';
-		for (let col = 0; col < n; col++) {
-			if ((row + col) % 2 === 0) {
+		for (let col = 0; col < n; col++)
+		{
+			if ((row + col) % 2 === 0)
+			{
 				table += '<td class="white-cell"></td>';
-			} else {
+			} else
+			{
 				table += '<td class="black-cell"></td>';
 			}
 		}
@@ -47,42 +57,51 @@ function drawChessboard() {
 
 }
 /*============================================================================================================*/
-function setImage() {
+function setImage()
+{
 	let image_file_control = document.getElementById("image-file");
 	let filename = image_file_control.files[0];
 	document.getElementById("image").src = URL.createObjectURL(filename);
 }
-function setBackgroundColor() {
+function setBackgroundColor()
+{
 	document.body.style.backgroundColor = document.getElementById("background-color").value;
 }
-function setForegroundColor(e) {
+function setForegroundColor(e)
+{
 	/*document.body.style.color = document.getElementById("foreground-color").value;*/
 	document.body.style.color = e.target.value;
 }
-function setColor(e) {
+function setColor(e)
+{
 	document.body.style[e.target.id === 'foreground-color' ? 'color' : 'backgroundColor'] = e.target.value;
 }
 document.addEventListener("mousemove", trackMouse);
-function trackMouse(e) {
+function trackMouse(e)
+{
 	document.getElementById("mouse-coords").innerHTML = `Mouse: X = ${e.clientX}, Y = ${e.clientY}`;
 }
 document.getElementById("switch-background").addEventListener("click", switchBackground);
-function switchBackground(e) {
+function switchBackground(e)
+{
 	document.body.className = document.body.className === 'dark' ? 'light' : 'dark';
 }
 document.getElementById("switch-background-delay").addEventListener("change", setDelay);
-function setDelay(e) {
+function setDelay(e)
+{
 	let delay = e.target.value;
 	document.body.style.transition = document.getElementById("switch-background").transition =
 		`color ${delay}s, background-color ${delay}s, background-image ${delay}s`;
 }
 /*=============================================================================================================*/
-function addLeadingZero(number) {
+function addLeadingZero(number)
+{
 	return number < 10 ? `0${number}` : `${number}`;
 }
 
 tick_timer();
-function tick_timer() {
+function tick_timer()
+{
 	let time = new Date();
 	document.getElementById("full-time").innerHTML = time.toString();
 
@@ -103,21 +122,26 @@ function tick_timer() {
 }
 
 document.getElementById("btn-start").addEventListener("click", startCountDownTimer);
-function startCountDownTimer() {
+function startCountDownTimer()
+{
 	let targetDateControl = document.getElementById("target-date");
 	let targetTimeControl = document.getElementById("target-time");
 	let btnStart = document.getElementById("btn-start");
-	if (btnStart.value === "Start") {
+	if (btnStart.value === "Start")
+	{
 		btnStart.value = "Stop";
 		targetDateControl.disabled = targetTimeControl.disabled = true;
 		tickCountdown();
 	}
-	else {
+	else
+	{
 		btnStart.value = "Start";
 		targetDateControl.disabled = targetTimeControl.disabled = false;
 	}
 }
-function tickCountdown() {
+function tickCountdown()
+{
+	if (document.getElementById("btn-start").value === "Start") return;
 	let now = new Date();
 	let targetDate = document.getElementById("target-date").valueAsDate;
 	let targetTime = document.getElementById("target-time").valueAsDate;
@@ -129,8 +153,8 @@ function tickCountdown() {
 	targetTime.setMonth(targetDate.getMonth());
 	targetTime.setDate(targetDate.getDate());
 
-	let timestamp = targetTime - now;
-	let duration = Math.trunc(timestamp) / 1000;
+	let timestamp = Math.abs(targetTime - now);
+	let duration = Math.trunc(timestamp / 1000);
 
 	document.getElementById("target-date-value").innerHTML = targetDate;
 	document.getElementById("target-time-value").innerHTML = targetTime;
@@ -152,22 +176,26 @@ function tickCountdown() {
 
 	let hours_block = document.getElementById("hours-unit").parentElement;
 	let years = Math.trunc(date / SECONDS_PER_YEAR);
-	if (years > 0) {
+	if (years > 0)
+	{
 		date = date % SECONDS_PER_YEAR;
 		let years_unit = document.getElementById("years-unit");
-		if (years_unit == null) {
+		if (years_unit == null)
+		{
 			let years_block = createTimeBlock("years", years);
 			hourss_block.before(years_block);
 		}
 		else years_unit.innerHTML = addLeadingZero(years);
 	}
-	else removeTimeBlock("hours");
+	else removeTimeBlock("years");
 
 	let months = Math.trunc(date / SECONS_PER_MONTH);
-	if (months > 0) {
+	if (months > 0)
+	{
 		date = date % SECONS_PER_MONTH;
 		let months_unit = document.getElementById("months-unit");
-		if (months_unit == null) {
+		if (months_unit == null)
+		{
 			let months_block = createTimeBlock("months", months);
 			hours_block.before(months_block);
 		}
@@ -175,11 +203,13 @@ function tickCountdown() {
 	}
 	else removeTimeBlock("months");
 
-	let weeks = Math.trunc(date / SECONS_PER_WEEKS);
-	if (weeks > 0) {
-		date = date % SECONS_PER_WEEKS;
+	let weeks = Math.trunc(date / SECONDS_PER_WEEK);
+	if (weeks > 0)
+	{
+		date = date % SECONS_PER_WEEK;
 		let weeks_unit = document.getElementById("weeks-unit");
-		if (weeks_unit == null) {
+		if (weeks_unit == null)
+		{
 			let weeks_block = createTimeBlock("weeks", weeks);
 			hours_block.before(weeks_block);
 		}
@@ -187,11 +217,13 @@ function tickCountdown() {
 	}
 	else removeTimeBlock("weeks");
 
-	let days = Math.trunc(date / SECONS_PER_DAYS);
-	if (days > 0) {
-		date = date % SECONS_PER_DAYS;
+	let days = Math.trunc(date / SECONDS_PER_DAY);
+	if (days > 0)
+	{
+		date = date % SECONS_PER_DAY;
 		let days_unit = document.getElementById("days-unit");
-		if (days_unit == null) {
+		if (days_unit == null)
+		{
 			let days_block = createTimeBlock("days", days);
 			hours_block.before(days_block);
 		}
@@ -202,11 +234,18 @@ function tickCountdown() {
 	document.getElementById("hours-unit").innerHTML = addLeadingZero(Math.trunc(time_of_day / SECONDS_PER_HOUR));
 	time_of_day = time_of_day % SECONDS_PER_HOUR;
 	document.getElementById("minutes-unit").innerHTML = addLeadingZero(Math.trunc(time_of_day / SECONDS_PER_MINUTE));
-	document.getElementById("seconds-unit").innerHTML = addLeadingZero(time_of_day / SECONDS_PER_MINUTE);
-	
+	document.getElementById("seconds-unit").innerHTML = addLeadingZero(Math.trunc(time_of_day % SECONDS_PER_MINUTE));
+
+	if (duration == 0)
+	{
+		let player = document.getElementById("player");
+		player.play();
+	}
+
 	setTimeout(tickCountdown, 100);
 }
-function createTimeBlock(name, value) {
+function createTimeBlock(name, value)
+{
 	let time_block = document.createElement("div");
 	time_block.className = "time-block";
 	let unit = document.createElement("div");
@@ -223,9 +262,11 @@ function createTimeBlock(name, value) {
 	time_block.append(marker);
 	return time_block;
 }
-function removeTimeBlock(name) {
+function removeTimeBlock(name)
+{
 	let unit = document.getElementById(`${name}-unit`);
-	if (unit != null) {
+	if (unit != null)
+	{
 		let block = unit.parentElement;
 		let display = block.parentElement;
 		display.removeChild(block);

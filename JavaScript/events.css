@@ -131,7 +131,7 @@ input[type=color]
 	font-size: 32px;
 }
 /*================================ Countdown Timer ==================================*/
-.display
+#display
 {
 	display: flex;
 	justify-content: space-around;
@@ -156,6 +156,9 @@ input[type=color]
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	border-top-left-radius:30px;
+	border-top-right-radius:30px;
 }
 .time-marker {
 	border: solid 1px;

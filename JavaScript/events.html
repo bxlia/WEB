@@ -98,11 +98,13 @@
 				<input type="checkbox" id="show-weekday" /><label for="show-weekday">Показать день недели</label>
 			</div>
 		</div>
+	</details>
+
 
 		<div id="countdown-timer">
 			<h2>Countdown timer</h2>
 			<input type="date" id="target-date" value="2026-09-26" />
-			<input type="time" id="target-time" value="17:00" />
+			<input type="time" id="target-time" value="19:00" />
 			<input type="button" id="btn-start" value="Start" />
 		</div>
 
@@ -129,7 +131,11 @@
 				<div id="seconds-marker" class="time-marker">Seconds</div>
 			</div>
 		</div>
-	</details>
+		<div id="sound">
+			<audio id="player" style="width: 100%">
+				<source src="joshua-mclean-mountain-trials.mp3" />
+			</audio>
+		</div>
 
 	<script src="events.js"></script>
 </body>
