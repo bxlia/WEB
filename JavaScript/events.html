@@ -12,14 +12,14 @@
 		<h5 id="mouse-coords"></h5>
 		<div>
 			<label for="switch-background-delay">Delay: </label>
-			<input type="number" value="3" id="switch-background-delay"/>
+			<input type="number" value="3" id="switch-background-delay" />
 			<div id="switch-background">
 				<!--<img src="moon.png" />-->
 			</div>
 		</div>
 	</div>
 	<details>
-		<summory>Простейшие задачи</summory>
+		<summary>Простейшие задачи</summary>
 		<div id="factorial-container" class="task">
 			<h2>Factorial</h2>
 			<input type="number" id="factorial-source" />
@@ -51,7 +51,7 @@
 	</details>
 
 	<details>
-		<summory>Цвета и картинки</summory>
+		<summary>Цвета и картинки</summary>
 		<div class="images-and-colors">
 			<div class="photo-container">
 				<div class="image-container">
@@ -73,28 +73,63 @@
 		</div>
 	</details>
 
+
 	<h2>Дата и время</h2>
-	<h3 id="full-time"></h3>
+	<details>
+		<summary>Часы</summary>
+		<h3 id="full-time"></h3>
 
-	<div id="clock">
-		<div id="current-time">
-			<span id="hours"></span> :
- 			<span id="minutes"></span> :
-			<span id="seconds"></span>
+		<div id="clock">
+			<div id="current-time">
+				<span id="hours"></span> :
+				<span id="minutes"></span> :
+				<span id="seconds"></span>
+			</div>
+
+			<div id="current-date">
+				<span id="years"></span> .
+				<span id="months"></span> .
+				<span id="days"></span>
+			</div>
+
+			<div id="weekday"></div>
+			<div id="clock-controls">
+				<input type="checkbox" id="show-date" /><label for="show-date">Показать дату</label>
+				<input type="checkbox" id="show-weekday" /><label for="show-weekday">Показать день недели</label>
+			</div>
 		</div>
 
-		<div id="current-date">
-			<span id="years"></span> .
- 			<span id="months"></span> .
-			<span id="days"></span>
+		<div id="countdown-timer">
+			<h2>Countdown timer</h2>
+			<input type="date" id="target-date" value="2026-09-26" />
+			<input type="time" id="target-time" value="17:00" />
+			<input type="button" id="btn-start" value="Start" />
 		</div>
 
-		<div id="weekday"></div>
-		<div id="clock-controls">
-			<input type="checkbox" id="show-date" /><label for="show-date">Показать дату</label>
-			<input type="checkbox" id="show-weekday" /><label for="show-weekday">Показать день недели</label>
+		<pre id="debug">
+<label for="target-date-value">Target date:</label><span id="target-date-value"></span>
+<label for="target-time-value">Target time:</label><span id="target-time-value"></span>
+<label for="timestamp">Timestamp:</label><span id="timestamp"></span>
+<label for="duration">Duration:</label><span id="duration"></span>
+		</pre>
+
+		<div id="display">
+			<div class="time-block">
+				<div id="hours-unit" class="time-unit"></div>
+				<div id="hours-marker" class="time-marker">Hours</div>
+			</div>
+
+			<div class="time-block">
+				<div id="minutes-unit" class="time-unit"></div>
+				<div id="minutes-marker" class="time-marker">Minutes</div>
+			</div>
+
+			<div class="time-block">
+				<div id="seconds-unit" class="time-unit"></div>
+				<div id="seconds-marker" class="time-marker">Seconds</div>
+			</div>
 		</div>
-	</div>
+	</details>
 
 	<script src="events.js"></script>
 </body>

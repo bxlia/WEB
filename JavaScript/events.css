@@ -119,7 +119,7 @@ input[type=color]
 {
 	margin-right: 32px; 
 }
-/*================================Time==================================*/
+/*================================ Time ==================================*/
 #clock
 {
 	font-family: 'Digital-7 Mono';
@@ -129,4 +129,37 @@ input[type=color]
 #clock-controls
 {
 	font-size: 32px;
+}
+/*================================ Countdown Timer ==================================*/
+.display
+{
+	display: flex;
+	justify-content: space-around;
+	margin: 24px;
+}
+.time-block
+{
+	width: 148px;
+	border: solid 3px;
+	border-radius: 32px;
+	box-shadow: 0 0 25px 0 gray;
+}
+.time-unit
+{
+	font-family: 'Digital-7 Mono';
+	font-size: 68px;
+
+	color: rgb(200, 0, 0);
+	background-color: #6f8956;
+	height: 148px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.time-marker {
+	border: solid 1px;
+	background-color: #df53ea;
+	color: aliceblue;
+	text-align: center;
 }
