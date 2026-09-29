@@ -141,7 +141,7 @@ input[type=color]
 {
 	width: 148px;
 	border: solid 3px;
-	border-radius: 32px;
+	border-radius: 26px;
 	box-shadow: 0 0 25px 0 gray;
 }
 .time-unit
@@ -149,20 +149,22 @@ input[type=color]
 	font-family: 'Digital-7 Mono';
 	font-size: 68px;
 
-	color: rgb(200, 0, 0);
-	background-color: #6f8956;
+	color: #8ad8ff;
+	background-color: #131330;
 	height: 148px;
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
-	border-top-left-radius:30px;
-	border-top-right-radius:30px;
+	border-top-left-radius:21px;
+	border-top-right-radius:21px;
 }
 .time-marker {
-	border: solid 1px;
-	background-color: #df53ea;
+	border: none;
+	background-color: #efa53c;
 	color: aliceblue;
 	text-align: center;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
 }
