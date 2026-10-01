@@ -181,7 +181,10 @@ function tickCountdown()
 	/*console.log(SECONDS_AMOUNT_IN["week".toUppetCase()]);*/
 	let hours_block = document.getElementById("hours-unit").parentElement;
 	/*let years = Math.trunc(date / SECONDS_PER_YEAR);*/
-	handleTimeBlock(date, "years");
+	console.log(`date before:${date}`);
+	date = handleTimeBlock(date, "years");
+	console.log(`date after:${date}`);
+	console.log(`----------------------------------------`);
 	//let years = Math.trunc(date / SECONDS_AMOUNT_IN["year".toUpperCase()]);
 	//if (years > 0)
 	//{
@@ -244,6 +247,9 @@ function tickCountdown()
 	if (duration === 0)
 	{
 		let player = document.getElementById("player");
+		player.setAttribute("controls", "controls");
+		player.attributes.controls;
+		console.log(typeof (player.attributes));
 		player.play();
 	}
 
@@ -264,6 +270,7 @@ function createTimeBlock(name, value)
 	marker.className = "time-marker";
 	marker.innerHTML = name.charAt(0).toUpperCase() + name.slice(1);
 
+	//Собираем созданные ранее блоки в один модуль:
 	time_block.prepend(unit);
 	time_block.append(marker);
 	return time_block;
@@ -278,7 +285,6 @@ function removeTimeBlock(name)
 		display.removeChild(block);
 	}
 }
-
 function resetDisplay()
 {
 	let display = document.getElementById("display");
@@ -286,13 +292,12 @@ function resetDisplay()
 	while (display.children[0].children[0].id != "hours-unit")
 		display.children[0].remove();
 }
-
 function handleTimeBlock(date, name)
 {
 	name = name.substring(0, name.length - 1);
 	let hours_block = document.getElementById("hours-unit").parentElement;
-	/*let years = Math.trunc(date / SECONDS_PER_YEAR);*/
-	/*console.log(SECONDS_AMOUNT_IN[name.toUpperCase()]);*/
+	//let years = Math.trunc(date / SECONDS_PER_YEAR);
+	//console.log(SECONDS_AMOUNT_IN[name.substring(0, name.length-1).toUpperCase()]);
 	let left = Math.trunc(date / SECONDS_AMOUNT_IN[name.toUpperCase()]);
 	if (left > 0)
 	{
