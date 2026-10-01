@@ -12,17 +12,29 @@ let buttons = document.getElementsByTagName("button");
 //console.log(digitButtons);
 
 let digitButtons = document.getElementsByClassName("digit-button");
-/*console.log(digitButtons);*/
+console.log(digitButtons);
 
 for (let i = 0; i < digitButtons.length; i++)
 {
-	digitButtons[i].addEventListener("click", inputDigit);
+	/*digitButtons[i].addEventListener("click", inputDigit);*/
+	document.getElementById(`${i}`).addEventListener("click", inputDigit);
 }
 function inputDigit()
 {
 	let display = document.getElementById("display");
-	if (display === '0') display.value = '';
+	if (display.value === '0') display.value = '';
 	display.value += this.innerHTML;
 	console.log(this);
 
+}
+
+document.onkeypress = function (e)
+{
+	console.log(e.key);
+	if (e.key.charcode >= 0 && e.key.charcode <= 9)
+	{
+		/*document.getElementById(`${e.key.charcode-48}`).;*/
+		document.getElementById("display").innerHTML += e.key;
+	}
+	console.log(e);
 }
