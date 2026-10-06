@@ -5,8 +5,8 @@ let buttons = document.getElementsByTagName("button");
 /*console.log(buttons);*/
 /*console.log(elemens);*/
 
-let a, b; //операнды
-let s; //Sign - знак операции
+let a = Number.MIN_VALUE, b = Number.MIN_VALUE; //операнды
+let operarion = ""; //Sign - знак операции
 let input = false;
 let input_operation = false;
 
@@ -94,8 +94,9 @@ document.onkeyup = function (e)
 	{
 		case "Backspace": Backspace(); break;
 		case "Escape":
+			Clear();
 			document.getElementById("C").classList.remove("button-active"); 
-		document.getElementById("display").value = "0"; break;
+			break;
 		case "Enter":
 			Calculate();
 			input = false;
@@ -106,10 +107,11 @@ document.onkeyup = function (e)
 		case "-":
 		case "*":
 		case "/":
+			if (a === Number.MIN_VALUE)a = Number(document.getElementById("display").value);
+			//input = false;
+			if(input)Calculate();
 			operation = e.key;
-			input = false;
 			input_operation = true;
-			a = Number(document.getElementById("display").value);
 			break;
 	}
 	if(e.key >= 0 && e.key <= 9 || e.key == '.')
@@ -124,7 +126,8 @@ function Backspace()
 }
 function Calculate()
 {
-	if (input)b = Number(document.getElementById("display").value);
+	if (input) b = Number(document.getElementById("display").value);
+	input = false;
 	switch (operation)
 	{
 		case "+": a += b; break;
@@ -135,4 +138,12 @@ function Calculate()
 	document.getElementById("display").value = a;
 	input = false;
 	input_operation = false;
+}
+function Clear()
+{
+	let a = Number.MIN_VALUE, b = Number.MIN_VALUE; //операнды
+	let operarion = ""; //Sign - знак операции
+	let input = false;
+	let input_operation = false;
+	document.getElementById("display").value = "0";
 }
