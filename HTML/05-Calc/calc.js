@@ -81,6 +81,7 @@ document.onkeyup = function (e)
 
 	switch (e.key)
 	{
+		case "Backspace": Backspace(); break;
 		case "Escape":
 			document.getElementById("C").classList.remove("button-active"); 
 		document.getElementById("display").value = "0"; break;
@@ -89,4 +90,11 @@ document.onkeyup = function (e)
 	}
 	if(e.key >= 0 && e.key <= 9 || e.key == '.')
 		digit2display(e.key);
+}
+
+function Backspace()
+{
+	document.getElementById("display").value;
+	if (display.value.length === 1) display.value = "0";
+	else display.value = display.value.substring(0, display.value.length - 1);
 }
