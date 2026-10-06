@@ -79,6 +79,21 @@ body
 {
 	margin: 0;
 }
+
+#geometry-result {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 20px;
+	line-weight: bold;
+	line-height: 1.2;
+	background-color: #f8f9fa;
+	padding: 15px;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	display: inline-block;
+	margin-top: 15px;
+}
+
+
 .chess-table
 {
 	border-collapse: collapse;

@@ -32,6 +32,70 @@ function fibonacci()
 	/*document.getElementById("fibonacci-result").innerHTML = `F(${n}) = ${b}`;*/
 	document.getElementById("fibonacci-result").innerHTML = row.join(`, `);
 }
+
+function geometry()
+{
+	let n = Number(document.getElementById("geometry-source").value);
+	let shape = document.getElementById("shape-select").value;
+	let result = "";
+
+	if (n <= 0)
+	{
+		document.getElementById("geometry-result").innerHTML = "¬ведите число";
+		return;
+	}
+
+	switch (shape)
+	{
+		case "square":
+			for (let i = 0; i < n; i++)
+			{
+				result += "* ".repeat(n) + "\n";
+			}
+			break;
+
+		case "triangle-lb":
+			for (let i = 1; i <= n; i++)
+			{
+				result += "* ".repeat(i) + "\n";
+			}
+			break;
+
+		case "triangle-lt":
+			for (let i = n; i >= 1; i--)
+			{
+				result += "* ".repeat(i) + "\n";
+			}
+			break;
+
+		case "triangle-rt":
+			for (let i = 0; i < n; i++)
+			{
+				result += "  ".repeat(i) + "* ".repeat(n - i) + "\n";
+			}
+			break;
+
+		case "triangle-rb":
+			for (let i = 1; i <= n; i++)
+			{
+				result += "  ".repeat(n - i) + "* ".repeat(i) + "\n";
+			}
+			break;
+
+		case "rhombus":
+			for (let i = 1; i <= n; i++)
+			{
+				result += " ".repeat(n - i) + "*".repeat(2 * i - 1) + "\n";
+			}
+			for (let i = n - 1; i >= 1; i--)
+			{
+				result += " ".repeat(n - i) + "*".repeat(2 * i - 1) + "\n";
+			}
+			break;
+	}
+	document.getElementById("geometry-result").innerText = result;
+}
+
 function drawChessboard()
 {
 	let n = Number(document.getElementById("chessboard-source").value);

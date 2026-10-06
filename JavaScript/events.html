@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿ <!DOCTYPE html>
 
 <html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -40,6 +40,25 @@
 			<input type="number" placeholder="Число фибоначчи" id="fibonacci-source" onchange="fibonacci()" />
 			<div id="fibonacci-result"></div>
 		</div>
+
+		<div id="geometry-container" class="task">
+			<h2>Geometry</h2>
+			<input type="number" placeholder="Длина клеток" id="geometry-source">
+			<div>
+				<select id="shape-select">
+					<option disabled>--- Выберите фигуру ---</option>
+					<option value="square">Квадрат</option>
+					<option value="triangle-lb">Прямоугольный треугольник (лев/низ)</option>
+					<option value="triangle-lt">Прямоугольный треугольник (лев/верх)</option>
+					<option value="triangle-rt">Прямоугольный треугольник (прав/верх)</option>
+					<option value="triangle-rb">Прямоугольный треугольник (прав/низ)</option>
+					<option value="rhombus">Ромб</option>
+					<option id="">Квадрат (+/-)</option>
+				</select>
+			</div>
+			<input type="button" value="Create" onclick="geometry()" />
+		</div>
+		<div id="geometry-result"></div>
 
 		<div id="chessboard-container" class="task">
 			<h2>Chessboard</h2>
