@@ -5,12 +5,14 @@ let buttons = document.getElementsByTagName("button");
 /*console.log(buttons);*/
 /*console.log(elemens);*/
 
-let a = Number.MIN_VALUE, b = Number.MIN_VALUE; //операнды
-let operarion = ""; //Sign - знак операции
+let a = null, b = null; //операнды
+let operation = ""; //Sign - знак операции
 let input = false;
 let input_operation = false;
 
 let digitButtons = document.getElementsByClassName("digit-button");
+let operationButtons = document.getElementsByClassName("operation-button");
+let clearButtons = document.getElementsByClassName("clear-button");
 console.log(digitButtons);
 //for (let i = 0; i < digitButtons.length-1; i++)
 //{
@@ -33,15 +35,28 @@ for (let i = 0; i < digitButtons.length; i++)
 	digitButtons[i].addEventListener("click", inputDigit);
 	//document.getElementById(`${i}`).addEventListener("click", inputDigit);
 }
-function inputDigit()
+for (let i = 0; i < operationButtons.length; i++)
 {
-	//let display = document.getElementById("display");
-	//if (display.value === '0') display.value = '';
-	//display.value += this.innerHTML;
-	//console.log(this);
-	digit2display(this.innerHTML);
+	operationButtons[i].addEventListener("click", SetState);
+}
+for (let i = 0; i < clearButtons.length; i++)
+{
+	clearButtons[i].addEventListener("click", SetState);
 }
 
+function SetState()
+{
+	console.log(this.innerHTML);
+	Press(this.innerHTML);
+}
+function inputDigit()
+{
+	/*let display = document.getElementById("display");
+	if (display.value === '0') display.value = '';
+	display.value += this.innerHTML;
+	console.log(this);*/
+	digit2display(this.innerHTML);
+}
 function digit2display(digit)
 {
 	if (input_operation === true)
@@ -49,6 +64,9 @@ function digit2display(digit)
 		document.getElementById("display").value = "";
 		input_operation = false;
 	}
+	console.log("digit2display");
+	console.log(digit);
+	console.log("------------------------------------");
 	let display = document.getElementById("display");
 	if (digit == ' ') return;
 	if (display.value === '0') display.value = '';
@@ -58,24 +76,26 @@ function digit2display(digit)
 	input = true;
 }
 
-//document.onkeypress = function (e)
-//{
-//	console.log(e.key);
-//	if (e.key.charcode >= 0 && e.key.charcode <= 9)
-//	{
-//		/*document.getElementById(`${e.key.charcode-48}`).;*/
-//		document.getElementById("display").innerHTML += e.key;
-//	}
-//	console.log(e);
-//}
+/*document.onkeypress = function (e)
+{
+	console.log(e.key);
+	if (e.key >= 0 && e.key <= 9)
+	{
+		//document.getElementById(`${e.key.charcode-48}`).
+		document.getElementById("display").value += e.key;
+		console.log("DIGIT");
+	}
+	console.log(e);
+}*/
 
 document.onkeydown = function (e)
 {
 	console.log(e.key);
 	let button = document.getElementById(`${e.key}`);
-	if (button != null)button.classList.add("button-active");
-	//button.pseudo(":active");
-	//console.log(button);
+	//alert(button);
+	if (button != null) button.classList.add("button-active");
+	//console.log(button.pseudo(":active"));
+	console.log(button);
 
 	switch (e.key)
 	{
@@ -83,46 +103,52 @@ document.onkeydown = function (e)
 		case "Enter": document.getElementById("=").classList.add("button-active"); break;
 	}
 }
-
 document.onkeyup = function (e)
 {
-	let button = document.getElementById(`${e.key}`);
+	Press(e.key)
+}
+function Press(key)
+{
+	console.log(key);
+	let button = document.getElementById(`${key}`);
 	if (button != null && button.classList != null)
 		button.classList.remove("button-active");
 
-	switch (e.key)
+	switch (key)
 	{
 		case "Backspace": Backspace(); break;
 		case "Escape":
+		case "C":
+		case "CE":
 			Clear();
-			document.getElementById("C").classList.remove("button-active"); 
+			document.getElementById("C").classList.remove("button-active");
 			break;
 		case "Enter":
+		case "=":
 			Calculate();
-			input = false;
-			input_operation = false;
-			document.getElementById("=").classList.remove("button-active"); break;
+			document.getElementById("=").classList.remove("button-active");
+			break;
 
 		case "+":
 		case "-":
 		case "*":
 		case "/":
-			if (a === Number.MIN_VALUE)a = Number(document.getElementById("display").value);
+			if (a === null) a = Number(document.getElementById("display").value);
 			//input = false;
-			if(input)Calculate();
-			operation = e.key;
+			if (input) Calculate();
+			operation = key;
 			input_operation = true;
 			break;
 	}
-	if(e.key >= 0 && e.key <= 9 || e.key == '.')
-		digit2display(e.key);
+	if ((key >= 0 && key <= 9) || key == '.')
+		digit2display(key);
 }
-
 function Backspace()
 {
-	document.getElementById("display").value;
+	let display = document.getElementById("display");
 	if (display.value.length === 1) display.value = "0";
 	else display.value = display.value.substring(0, display.value.length - 1);
+	input = true;
 }
 function Calculate()
 {
@@ -133,17 +159,18 @@ function Calculate()
 		case "+": a += b; break;
 		case "-": a -= b; break;
 		case "*": a *= b; break;
-		case "/": a /= b; break;
+		case "/": a = (b === 0) ? "" : a / b; break;
+		default: break;
 	}
-	document.getElementById("display").value = a;
-	input = false;
 	input_operation = false;
+	let display = document.getElementById("display");
+	display.value = (a === null) ? "0" : a;
 }
 function Clear()
 {
-	let a = Number.MIN_VALUE, b = Number.MIN_VALUE; //операнды
-	let operarion = ""; //Sign - знак операции
-	let input = false;
-	let input_operation = false;
+	a = null, b = null;	//операнды
+	operation = "";		//Sign - знак операции
+	input = false;
+	input_operation = false;
 	document.getElementById("display").value = "0";
 }
